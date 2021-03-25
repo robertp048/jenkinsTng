@@ -1,3 +1,3 @@
 # jenkinsTng
 
-Hello, Hudson!
+Hello, world!
