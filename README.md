@@ -1,3 +1,3 @@
 # jenkinsTng
 
-Hello, Jenkins! Good to see you!
+Hello, Jenkins!
