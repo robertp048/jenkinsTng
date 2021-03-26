@@ -3,7 +3,7 @@ node {
         git branch: 'main', url: 'https://github.com/robertp048/jenkinsTng.git'
     }
     stage('List repo contents') {
-        sh 'ls -alR'
+        sh 'ls -al'
     }
     stage('Print selected file') {
         sh 'cat seed2.json'
