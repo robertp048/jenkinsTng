@@ -3,18 +3,7 @@ node {
         git branch: 'main', url: 'https://github.com/robertp048/jenkinsTng.git'
     }
     stage('Process contents') {
-        parallel(
-            label1: {
-                node('master') {
-                    sh 'ls -al'
-                }
-             },
-             label2: {
-                 node('master') {
-                     sh 'cat seed2.json'
-                 }
-             }
-        )
+        sh 'ls -al; cat seed2.json'
     }
     stage('Send notification') {
         sh 'echo "Pipeline processed successfully!"'
