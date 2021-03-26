@@ -2,7 +2,13 @@ node {
     stage('Clone repo') {
         git branch: 'main', url: 'https://github.com/robertp048/jenkinsTng.git'
     }
-    stage('Print file') {
-        sh 'cat seed2.groovy'
+    stage('List repo contents') {
+        sh 'ls -alR'
+    }
+    stage('Print selected file') {
+        sh 'cat seed2.json'
+    }
+    stage('Send notification') {
+        sh 'echo "Pipeline processed successfully!"'
     }
 }
