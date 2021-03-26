@@ -1,0 +1,8 @@
+node {
+    stage('Clone repo') {
+        git branch: 'main', url: 'https://github.com/robertp048/jenkinsTng.git'
+    }
+    stage('Print file') {
+        sh 'cat seed2.groovy'
+    }
+}
