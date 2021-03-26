@@ -2,11 +2,19 @@ node {
     stage('Clone repo') {
         git branch: 'main', url: 'https://github.com/robertp048/jenkinsTng.git'
     }
-    stage('List repo contents') {
-        sh 'ls -al'
-    }
-    stage('Print selected file') {
-        sh 'cat seed2.json'
+    stage('Process contents') {
+        parallel(
+            label1: {
+                node('master') {
+                    sh 'ls -al'
+                }
+             },
+             label2: {
+                 node('master') {
+                     sh 'cat seed2.json'
+                 }
+             }
+        )
     }
     stage('Send notification') {
         sh 'echo "Pipeline processed successfully!"'
